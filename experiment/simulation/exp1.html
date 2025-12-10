@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+    <div class="container" id="box">
+   
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Instructions</h2>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                    <ol type="1" style="font-size: 20px;text-align: justify;">
+                        <li>Click on the <b>CREATE</b> tab to start building a dataset for the algorithm.</li>
+                        <li>In the <b>ATTRIBUTES</b> section, select values for each attribute using the dropdown menu. Click <b>ADD</b> to incorporate these values into the table.</li>
+                        <li>Repeat step 2 until you have completed this process for <b>four</b> rows.</li>
+                        <li>Click <b>NEXT</b> to proceed to the <b>COMPUTE</b> page and initiate the candidate elimination algorithm.</li>
+                        <li>Click <b>ITERATE</b> to identify positive and negative examples within the dataset.</li>
+                        <li>Subsequently, click <b>GENERIC</b> for each attribute to uncover a more generalized hypothesis.</li>
+                        <li>Review the version space to identify boundaries.</li>
+                        <li>Next, click <b>SPECIFIC</b> for each attribute to uncover a more specific hypothesis.</li>
+                        <li>Review the version space again to identify boundaries.</li>
+                        <li>Repeat steps 5 and 9 for every instance (example) in the dataset.</li>
+                        <li>Now, click on the <b>FINAL HYPOTHESIS</b> tab.</li>
+                        <li>Click on the <b>SPACE</b> button to retrieve the specific and generic hypothesis.</li>
+                        <li>Now, click on the <b>COMPARE</b> button to get the consistent hypothesis.</li>
+                        <li>Repeat the above step (13) to compare each generic value with a specific hypothesis.</li>
+                    </ol>
+                                           
+                    </p>
+                    <b style="color:#004E86">NOTE 1:</b> Read the alerts properly.<br>
+                    <b style="color:#004E86">NOTE 2:</b> Explore simulations with various combinations of datasets for a better understanding.
+
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- header -->
+        <header class="header">
+            <div class="tabs">
+                <!-- tabs -->
+                <div id="tab-1"
+                    style="display: flex; border-right: 2px solid #F5F5F5;border-top-left-radius: 10px;background-color:#ffd964;cursor:not-allowed;">
+                    <div class="tab-create" style="background-color: #ffd964;border-top-left-radius: 10px;cursor:not-allowed;">
+                        <a class="tab-text" style="color: #004E86;font-weight: bold;cursor:not-allowed;"> CREATE</a>
+                    </div>
+                    <img src="images/create1.png" style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" alt="">
+
+                </div>
+                <div id="tab-2" style="display: flex; border-right: 2px solid #F5F5F5; cursor:not-allowed;">
+                    <div class="tab-create tab-text" style="cursor:not-allowed;">
+
+                        COMPUTE
+                    </div>
+                    <img src="images/calculator.png"
+                        style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" id="calImg" alt="">
+                </div>
+                <div id="tab-3"
+                    style="display: flex; border-right: 2px solid #F5F5F5;  cursor:not-allowed;">
+                    <div class="tab-create tab-text" style="cursor:not-allowed;">
+                        FINAL HYPOTHESIS
+                    </div>
+                    <img src="images/hypo.png" style="margin-top: 3px; margin-right: 10px; height: 85%" alt="">
+
+                </div>
+            </div>
+            <a class="header-text" id="myBtn" style="padding-top: 8px" href="#">INSTRUCTIONS</a>
+        </header>
+
+        <div class="sec-con-container">
+            <div class="sec-con-column">
+                <!-- controls -->
+                <div class="ex1-left-side-container">
+                    <div class="sub-div-control" id="training-control">
+                        <header id="trainToTest" class="header-box">ATTRIBUTES</header>
+                        <div class="control-panel">
+                            <div class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>SKY</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="sky" >
+                                    <option value='NULL'>NULL</option>
+                                    <option value="Sunny">SUNNY</option>
+                                    <option value="Rainy">RAINY</option>
+                                </select>
+                            </div>
+                            <div class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>TEMPERATURE</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="temperature" >
+                                    <option value='NULL'>NULL</option>
+                                    <option value="Warm">WARM</option>
+                                    <option value="Cold">COLD</option>
+                                </select>
+                            </div>
+                            <div class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>HUMID</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="humid">
+                                    <option value='NULL'>NULL</option>
+                                    <option value="Normal">NORMAL</option>
+                                    <option value="High">HIGH</option>
+                                </select>
+                            </div>
+                            <div id=target class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>WIND</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="wind">
+                                    <option value='NULL'>NULL</option>
+                                    <option value='Strong'>STRONG</option>
+                                    <option value="Weak">WEAK</option>
+                                </select>
+                            </div>
+                            <div class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>WATER</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="water">
+                                    <option value='NULL'>NULL</option>
+                                    <option value="Warm">WARM</option>
+                                    <option value="Cool">COOL</option>
+                                </select>
+                            </div>
+                            <div class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>FOREST</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="forest">
+                                    <option value='NULL'>NULL</option>
+                                    <option value="Same">SAME</option>
+                                    <option value="Change">CHANGE</option>
+                                </select>
+                            </div>
+                            <div class="Data-set-value-input-container">
+                                <span class="control-input-heading"><b>ENJOY SPORT</b></span>
+                                <span style="color:#004E86"><b>:</b></span>
+                                <select class="input-control" id="output">
+                                    <option value='NULL'>NULL</option>
+                                    <option value="Yes">YES</option>
+                                    <option value="No">NO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- table -->
+            <div class="sec-con-table">
+                <div class="sub-div-table">
+                    <header class="header-box">DATASET (X)</header>
+                    <div id="tablesContainer" >
+                        <table id="dataSetTable">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>SKY</th>
+                                    <th>TEMPERATURE</th>
+                                    <th>HUMID</th>
+                                    <th>WIND</th>
+                                    <th>WATER</th>
+                                    <th>FOREST</th>
+                                    <th>ENJOY SPORT</th>
+                                    <th class="tobedeleated">DELETE</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="for11">
+                                <!-- Data point coordinates will be dynamically populated here -->
+                            </tbody>
+                        </table>
+
+                        <table id="predefined-data-table" style="display:none">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>SKY</th>
+                                    <th>TEMPERATURE</th>
+                                    <th>HUMID</th>
+                                    <th>WIND</th>
+                                    <th>WATER</th>
+                                    <th>FOREST</th>
+                                    <th>ENJOY SPORT</th>
+                                </tr>
+                               
+                            </thead>
+                            <tbody id="for_pre">
+                                <tr>
+                                    <td style="padding:12px">1</td>
+                                    <td style="padding:12px">Sunny</td>
+                                    <td style="padding:12px">Warm</td>
+                                    <td style="padding:12px">Normal</td>
+                                    <td style="padding:12px">Strong</td>
+                                    <td style="padding:12px">Warm</td>
+                                    <td style="padding:12px">Same</td>
+                                    <td style="padding:12px">Yes</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:12px">2</td>
+                                    <td style="padding:12px">Sunny</td>
+                                    <td style="padding:12px">Warm</td>
+                                    <td style="padding:12px">High</td>
+                                    <td style="padding:12px">Strong</td>
+                                    <td style="padding:12px">Warm</td>
+                                    <td style="padding:12px">Same</td>
+                                    <td style="padding:12px">Yes</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:12px">3</td>
+                                    <td style="padding:12px">Rainy</td>
+                                    <td style="padding:12px">Cold</td>
+                                    <td style="padding:12px">High</td>
+                                    <td style="padding:12px">Strong</td>
+                                    <td style="padding:12px">Warm</td>
+                                    <td style="padding:12px">Change</td>
+                                    <td style="padding:12px">No</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:12px">4</td>
+                                    <td style="padding:12px">Sunny</td>
+                                    <td style="padding:12px">Warm</td>
+                                    <td style="padding:12px">High</td>
+                                    <td style="padding:12px">Strong</td>
+                                    <td style="padding:12px">Cool</td>
+                                    <td style="padding:12px">Change</td>
+                                    <td style="padding:12px">Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="sub-div-term">
+                    <header class="header-box">TARGET</header>
+                    <p style="margin:10px;text-align: justify;font-size: 18px;margin-top: 20px;">
+                        For the target concept 'c,' denoting 'Days on which someone enjoys their favorite water sport,' the dataset X includes an attribute <span style="color:#004E86">'EnjoySport'</span>.
+                         This attribute within the above dataset signifies whether or not someone engages in their favorite water sport on a specific day.
+                         As we apply the CEA, this attribute becomes crucial for refining and updating the hypothesis space during the learning process.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="control-panel-button-container">
+            <button  id="add-button" onclick="addDataToTable()"
+                 style="margin-left: 3px;">ADD</button>
+            <button  id='reset'   disabled onclick="window.location.reload()"
+                style="margin-left: 3px;">RESET</button>
+                <button  id="NEXT" onclick="theNextButton()" disabled = true ; style="margin-left: 3px; cursor: not-allowed;">NEXT</button>
+        </div>
+        
+        <!-- footer -->
+        <footer class="footer">
+            <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
+        </footer>
+        
+       
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"> </script>
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+
+table_alert();
+
+/*
+        Swal.fire({
+            icon: 'info',
+            title:'Create the dataset for performing the CEA!!',
+            html: 'Choose a value for each attribute using the dropdown menu,<br> and then click the <b style="color:#004E86">ADD</b> button.',
+            customClass: {
+                container: "position-absolute",
+                popup: "swal-popup",
+                title: "swal-title",
+                content: "swal-content",
+            },
+            target: myContainer,
+            didOpen: () => {
+             
+                const container = document.querySelector('.position-absolute');
+                const containerWidth = myContainer.offsetWidth;
+                const containerHeight = myContainer.offsetHeight;
+
+                // Change font size based on container size
+                if (containerWidth >= 1000 && containerHeight >= 672) {
+                    container.style.fontSize = '24px';
+                } else {
+                    container.style.fontSize = '16px';
+                }
+
+                // Adjust dimensions and position of the Swal container
+                container.style.position = 'absolute';
+                container.style.width = '100%';
+                container.style.height = '100%';
+                container.style.top = '0';
+                container.style.left = '0';
+                container.style.padding = '0';
+            },
+        });
+
+        */
+
+                // Get the input element
+const inputElements = document.getElementsByClassName('input-control');
+
+for(i=0;i<7;i++)
+{
+// Add a click event listener to the input element
+inputElements[i].addEventListener('click', function () {
+    this.style.border= '';
+});
+}
+document.querySelector('.container').style.backgroundImage = 'none';
+</script>
+    </div>
+
+</body>
+
+</html>
