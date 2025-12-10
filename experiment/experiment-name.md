@@ -1,1 +1,1 @@
-## Experiment name
+## To study and perform the Candidate-Elimination algorithm for concept learning

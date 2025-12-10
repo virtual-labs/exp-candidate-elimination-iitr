@@ -1,1 +1,1 @@
-### Aim of the experiment
+#### The aim of the experiment is to learn and perform the working of Candidate-Elimination Algorithm.

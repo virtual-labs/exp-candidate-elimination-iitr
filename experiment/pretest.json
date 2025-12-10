@@ -1,39 +1,53 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+[
+  {
+    "question": "What is the primary goal of the Candidate Elimination algorithm?",
+    "answers": {
+      "a": "To find the most accurate hypothesis",
+      "b": "To find the most complex hypothesis",
+      "c": "To find the simplest hypothesis",
+      "d": "To find all possible hypotheses"
     },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+    "correctAnswer": "d"
+  },
+  {
+    "question": "What is the worst-case time complexity of the Candidate Elimination algorithm for a dataset with 'n' instances and 'm' attributes?",
+    "answers": {
+      "a": "O(n)",
+      "b": "O(m)",
+      "c": "O(n²)",
+      "d": "O(n*m)"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "During the initialization phase, what is the initial hypothesis set?",
+    "answers": {
+      "a": "Empty set",
+      "b": "Set containing all possible instances",
+      "c": "Set containing only positive instances",
+      "d": "Set containing only negative instances"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "In machine learning, the Candidate Elimination algorithm is used for which type of learning?",
+    "answers": {
+      "a": "Supervised learning",
+      "b": "Unsupervised learning",
+      "c": "Reinforcement learning",
+      "d": "Semi-supervised learning"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "The Candidate-Elimination Algorithm represents the ________.",
+    "answers": {
+      "a": "Solution Space",
+      "b": "Version Space",
+      "c": "Elimination Space",
+      "d": "All of the above"
+    },
+    "correctAnswer": "b"
+  }
+]
+

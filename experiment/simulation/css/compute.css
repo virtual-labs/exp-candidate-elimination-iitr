@@ -1,0 +1,1100 @@
+* {
+  font-family: 'Times New Roman', Times, serif;   
+}
+
+.container {
+  width: 1000px;
+  height: 630px;
+  border: 1px solid #004E86;
+  background-color: #F5F5F5;
+  cursor: pointer;  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.header {
+  width: 100%;
+  background-color: #004E86;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  height: 35px;  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.header-text {
+  font-size: 16px;
+
+  color: white;
+}
+
+.header-text:nth-child(1) {
+  padding-left: 20px;
+}
+
+.header-text:nth-child(2) {
+  padding-right: 20px;
+}
+
+.tab-create {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+
+}
+
+.tabs {
+  display: flex;
+  width: 980px;
+  margin: auto;
+  margin-top: 0px;
+  height: 35px;
+}
+
+.tab-text {
+  color: #FFC000;
+  text-decoration-line: none;
+}
+
+.sec-con-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin: 10px;
+  width: 980px;
+  height: 100%;
+  /* margin: auto; */
+}
+
+.sec-con {
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 400px;
+  height: 550px;
+  /* margin: auto; */
+}
+
+.sec-con-table {
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 35%;
+  height: 100px;
+  margin-left: auto;
+} 
+
+.sec-con-column {
+  display: flex;
+  flex-flow: column;
+  width: 55%;
+  height: 100%;
+
+}
+
+.sub-div {
+  width: 480px;
+  height: 280px;
+  margin-top: 10px;
+  margin: 10px;
+}
+
+.sub-div-control {
+  width: 100%;
+  height: fit-content;
+  border: 0px solid #E5E7EB;
+  background-color: #FFFFFF;
+ border-radius: 10px;
+ color:#333;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+
+}
+
+.training-left-side-container {
+  width: 98%;
+  height: 87%;
+  margin: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+.training-right-side-container {
+  width: 98%;
+  height: 87%;
+  margin: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+.sub-div-hypo{
+  width: 100%;
+  height: 435px;
+  border: 0px solid #E5E7EB;
+  background-color: #FFFFFF;
+ border-radius: 10px;
+ color:#333;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+}
+
+.sub-div-table
+{
+  min-height: 320px;
+  width: 100%;    
+  margin-top:10px;
+  border: 0px solid #E5E7EB;
+  background-color: #FFFFFF;
+ border-radius: 10px;
+ color:#333;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.sub-div-plot {
+  width: 570px;
+  height: 384px;
+  border: 0px solid #E5E7EB;
+  background-color: #FFFFFF;
+ border-radius: 10px;
+ color:#333;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  margin: 10px;
+}
+
+.header-box {
+  width: 100%;
+  background-color: #004E86;
+  color: White;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 18px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+}
+
+.sub-div-button
+{
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.sub-div-button3
+{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  height:80px;
+  align-items: center;
+}
+
+.sub-div-button2
+{
+  display: flex;
+  flex-flow: column;
+  width: 12%;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  height: 300px;
+}
+
+.heading-label
+{
+  margin-left: 30px;margin-top: 10px;position: absolute;color:#004E86
+}
+
+.labels
+{
+  font-size:18px;margin-left:10px;position:absolute;color:#004E86;width: 410px;
+}
+/* CSS */
+
+button {
+  width: 120px;
+  color:#FFC000;
+  background-color: #004E86;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  outline: 0;
+  padding: 3px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: 
+  0 -0.5em 0.5em transparent,
+  0 0.5em 0.5em transparent,
+  0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+  0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+}
+
+button:before {
+background-color: initial;
+background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+border-radius: 125px;
+content: "";
+height: 50%;
+left: 4%;
+opacity: .5;
+position: absolute;
+top: 0;
+transition: all .3s;
+width: 92%;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+.btn {
+  width: 120px;
+  color:#FFC000;
+  background-color: #004E86;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  outline: 0;
+  padding: 3px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: 
+  0 -0.5em 0.5em transparent,
+  0 0.5em 0.5em transparent,
+  0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46), 
+  0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+}
+
+
+.footer {
+  width: 100%;
+  height: 4%;
+  background-color: #004E86;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.footer-text {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  color: #FFC000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 350px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-top: 12px;
+  width: 1000px;
+  height: 618px;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
+  border-radius: 10px;
+}
+
+
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #FFC000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #004E86;
+  color: #FFC000;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #004E86;
+  color: #FFC000;
+}
+
+
+#myBtn:hover {
+  cursor: "pointer";
+}
+
+
+/*swal*/
+.position-absolute {
+  position: absolute !important;
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+
+}
+.swal-title
+{
+  color:darkblue;
+  font-size:23px;
+}
+.custom-input
+{
+  width:300px;
+  margin:auto;
+  margin-top: 5px;
+}
+
+
+/* controls */
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  height: 138px;
+}
+
+.control-panel-button-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 164px;
+  width: 180px;
+}
+
+.Data-set-x-value-input-container {
+  width: 100%;
+  height: 68px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.control-panel-create-frist {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column;
+  height: 175px;
+}
+
+.input-control {
+  width: 120px;
+  height: 30px;
+  text-align: center;
+}
+
+.control-input-heading {
+  font-size: 24px;
+}
+
+
+#tablesContainer {
+  
+  height: 50%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+  background-color:  #e5f5fe;
+  color:black;
+/* border: 1px solid black;*/
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  width: auto;
+  font-size: 13px;
+
+}
+
+td{
+  color:#333;
+}
+#secondtable{
+  visibility:hidden;
+  height: 420px;
+}
+
+#box {
+  position: relative;
+
+}
+
+.swal-container {
+  width: 1000px;
+  height: 672px;
+  padding: 0px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(0%, 0%);
+  border-radius: 10px;
+}
+
+.swal-container:target {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(0%, 0%);
+  border-radius: 10px;
+  margin-top:280px;
+  margin-left:300px;
+}
+
+
+
+.swal-popup {
+  width: auto !important;
+  max-width: 100% !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.swal-popup2 {
+  width: auto !important;
+  max-width: 60% !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+
+#obser2
+{
+  margin-left: 10px;margin-right: 10px;font-size:20px;
+  color:gray;
+  text-align: justify;
+}
+
+.position-absolute {
+position: absolute !important;
+backdrop-filter: blur(6px);
+}
+
+.swal2-popup {
+font-size: 0.9rem !important;
+font-family: Georgia, serif;
+}
+
+
+.node {
+width: 70px;
+height: 35px;
+text-align: center;
+border: 1px solid black;
+background-color: white;
+color: black;
+opacity: 1;
+padding: 0;
+/* prevent text cursor on nodes*/
+cursor: default;
+/* add a subtle shadow to nodes */
+box-shadow: 2px 2px 5px rgba(120, 120, 120, 0.5);
+margin-left:-5px;
+}
+
+
+.jsavhorizontalarray .jsavindex {
+display: inline-block;
+position: relative;
+}
+
+/* remove right borders from everything but the last index */
+
+.jsavhorizontalarray .jsavindex:not(:last-of-type) {
+border-right: none;
+}
+
+.jsavhorizontalarray .jsavindexlabel {
+bottom: -25px;
+left: 0;
+color:#2989ce;
+}
+
+.jsavhorizontalarray .jsavindex:first-of-type {
+-ms-border-top-left-radius: 8px;
+-ms-border-bottom-left-radius: 8px;
+-moz-border-top-left-radius: 8px;
+-moz-border-bottom-left-radius: 8px;
+-o-border-top-left-radius: 8px;
+-o-border-bottom-left-radius: 8px;
+-webkit-border-top-left-radius: 8px;
+-webkit-border-bottom-left-radius: 8px;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+}
+
+.jsavhorizontalarray .jsavindex:last-of-type {
+-ms-border-top-right-radius: 8px;
+-ms-border-bottom-right-radius: 8px;
+-moz-border-top-right-radius: 8px;
+-moz-border-bottom-right-radius: 8px;
+-o-border-top-right-radius: 8px;
+-o-border-bottom-right-radius: 8px;
+-webkit-border-top-right-radius: 8px;
+-webkit-border-bottom-right-radius: 8px;
+border-top-right-radius: 8px;
+border-bottom-right-radius: 8px;
+}
+
+.jsavcontainer {
+overflow: hidden;
+width: auto;
+padding: 0.7em;
+border: 1px solid black;
+background-color: white;
+position: relative;
+/* prevent text selection within container */
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.jsavcenter {
+margin-left: auto;
+margin-right: auto;
+}
+
+.jsavarray,
+.jsavlabel,
+.jsavcode,
+.jsavlist,
+.jsavtree,
+.jsavgraph,
+.jsavmatrix {
+margin-top: 0.8em;
+margin-bottom:0.8em;
+}
+
+.jsavhighlight,
+.jsavarray.jsavbararray .jsavindex.jsavhighlight .jsavvalue,
+.jsavvariable.jsavhighlight .jsavvalue {
+background-color: yellow !important;
+color: black !important;
+}
+
+.jsavvalue {
+/* FF doesn't respect 100% here when using display: table so have to fix the height */
+height: 33px;
+width: 100%;
+min-height: inherit;
+min-width: inherit;
+background-color: transparent;
+display: table;
+border-radius: inherit;
+}
+
+.jsavvaluelabel {
+display: table-cell;
+vertical-align: middle;
+}
+
+.jsavautoresize .jsavnode {
+width: auto;
+min-width: 45px;
+height: auto;
+min-height: 45px;
+}
+
+/***** STYLING OF THE ARRAY DATA STRUCTURE *****/
+
+.jsavarray {
+position: relative;
+list-style: none;
+min-height: 50px;
+padding: 0;
+clear: both;
+white-space: nowrap;
+-webkit-transform-style: preserve-3d;
+}
+
+.jsavarray * {
+-webkit-transform-style: preserve-3d;
+}
+
+.jsavarray:after {
+content: "";
+clear: both;
+display: block;
+}
+
+.jsavindexlabel {
+width: 100%;
+height: 25px;
+line-height: 25px;
+color: black;
+position: absolute;
+vertical-align: middle;
+}
+
+.jsavindex {
+box-sizing: border-box;
+}
+
+.jsavindex span {
+z-index: 99;
+padding:2px;
+}
+
+
+
+.jsavbararray {
+height: 150px;
+overflow: visible;
+padding-bottom: 30px;
+}
+
+.jsavbararray .jsavnode {
+/* remove shadow from the white bars */
+box-shadow: none;
+}
+
+.jsavbararray .jsavindex {
+height: 100%;
+vertical-align: bottom;
+border: none;
+background-color: #ddd;
+margin-left: 2px;
+float: left;
+position: relative;
+}
+
+.jsavbararray .jsavvalue {
+z-index: 100;
+bottom: 0;
+background-color: inherit;
+min-height: 0;
+-moz-border-radius: 0;
+-o-border-radius: 0;
+-ms-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+/* add a subtle shadow to bars */
+box-shadow: 2px 2px 5px rgba(120, 120, 120, 0.5);
+}
+
+.jsavbararray .jsavvalue span {
+position: absolute;
+width: inherit;
+bottom: 0;
+left: 0;
+}
+
+.jsavbararray .jsavvalue,
+.jsavbararray .jsavvaluebar {
+display: block;
+padding: 0;
+position: absolute;
+width: 100%;
+}
+
+.jsavbararray .jsavvaluebar {
+height: 100%;
+top: 0;
+background-color: #fff;
+}
+
+.jsavbararray .jsavindexlabel {
+font-size: 90%;
+position: relative;
+top: 100%;
+vertical-align: middle;
+}
+
+/* vertical array */
+
+.jsavverticalarray.jsavindexed .jsavindex {
+position: relative;
+}
+
+.jsavverticalarray .jsavindex {
+margin-bottom: -1px;
+float: left;
+clear: left;
+}
+
+.jsavverticalarray .jsavindexlabel {
+position: absolute;
+text-align: right;
+width: auto;
+left: -17px;
+}
+
+.jsavverticalarray .jsavindex:first-of-type,
+.jsavverticalarray .jsavindex:first-of-type .jsavvalue {
+-ms-border-top-left-radius: 8px;
+-moz-border-top-left-radius: 8px;
+-o-border-top-left-radius: 8px;
+-webkit-border-top-left-radius: 8px;
+border-top-left-radius: 8px;
+-ms-border-top-right-radius: 8px;
+-moz-border-top-right-radius: 8px;
+-o-border-top-right-radius: 8px;
+-webkit-border-top-right-radius: 8px;
+border-top-right-radius: 8px;
+}
+
+.jsavverticalarray .jsavindex:last-of-type,
+.jsavverticalarray .jsavindex:last-of-type .jsavvalue {
+-ms-border-bottom-left-radius: 8px;
+-moz-border-bottom-left-radius: 8px;
+-o-border-bottom-left-radius: 8px;
+-webkit-border-bottom-left-radius: 8px;
+border-bottom-left-radius: 8px;
+-ms-border-bottom-right-radius: 8px;
+-moz-border-bottom-right-radius: 8px;
+-o-border-bottom-right-radius: 8px;
+-webkit-border-bottom-right-radius: 8px;
+border-bottom-right-radius: 8px;
+}
+
+/* bar array marker line */
+
+.jsavmark {
+position: absolute;
+display: none;
+background-color: #FF6464;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-ms-border-radius: 10px;
+-o-border-radius: 10px;
+border-radius: 10px;
+width: 8px;
+height: 8px;
+z-index: 190;
+}
+
+.jsavmarkline {
+position: absolute;
+display: none;
+height: 1px;
+background-color: #FF6464;
+background-color: rgba(255, 100, 100, 0.6);
+z-index: 190;
+}
+
+/***** END STYLING OF THE ARRAY DATA STRUCTURE *****/
+
+/*** OUTPUT STYLING ***/
+
+.jsavline {
+overflow: visible;
+border: none;
+background-color: inherit;
+height: 50px;
+}
+
+.jsavscroll {
+overflow: auto;
+background-color: white;
+border: 1px solid black;
+height: 220px;
+}
+
+.jsavoutput .jsavtitle {
+display: block;
+margin-top: 2.5em;
+font-size: 300%;
+text-align: center;
+}
+
+.jsavindex.jsavarrow:before {
+content: "";
+background-color: transparent;
+position: absolute;
+width: 0;
+height: 0;
+border: 6px solid transparent;
+border-top: 6px solid #333;
+top: -10px;
+left: 35px;
+}
+
+/**** END OUTPUT STYLING ***/
+
+.jsavcanvas svg {
+position: absolute;
+height: 100%;
+width: 100%;
+z-index: 110;
+}
+
+.jsavcontainer svg {
+pointer-events: none;
+}
+
+.jsavcontainer svg * {
+pointer-events: visible;
+}
+
+/**** STYLING THE CONTROLS ****/
+
+.jsavcontrols {
+text-align: center;
+}
+
+.jsavcontrols span {
+display: inline-block;
+color: #777;
+font-family: 'Times New Roman';
+font-size: 20px;
+font-weight: bolder;
+line-height: 45px;
+width: 45px;
+height: 45px;
+margin: 15px 40px;
+background-color: #fff;
+border: 1px solid #777;
+-o-border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+-ms-border-radius: 50%;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.jsavplaying span {
+cursor: default;
+}
+
+.jsavbegin,
+.jsavend {
+letter-spacing: -2px;
+}
+
+/**** END STYLING THE CONTROLS ****/
+
+/**** STYLING THE DIALOG ****/
+
+.jsavdialog {
+border: 1px solid #aaa;
+background-color: #fff;
+z-index: 1000;
+position: absolute;
+top: 0;
+left: 0;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.jsavsettings-dialog {
+border-radius: 10px;
+}
+
+.jsavsettings-dialog.arrow-top-left {
+border-top-left-radius: 0;
+}
+
+.jsavsettings-dialog.arrow-top-right {
+border-top-right-radius: 0;
+}
+
+.jsavsettings-dialog.arrow-bottom-left {
+border-bottom-left-radius: 0;
+}
+
+.jsavsettings-dialog.arrow-bottom-right {
+border-bottom-right-radius: 0;
+}
+
+.jsavsettings-dialog:after {
+content: "";
+display: block;
+width: 0;
+height: 0;
+position: absolute;
+border: 8px solid transparent;
+border-left-color: #eee;
+transform: rotate(-90deg);
+}
+
+.jsavsettings-dialog.arrow-top-left:after {
+top: -16px;
+left: 0;
+}
+
+.jsavsettings-dialog.arrow-top-right:after {
+top: -16px;
+right: 0;
+}
+
+.jsavsettings-dialog.arrow-bottom-left:after,
+.jsavsettings-dialog.arrow-bottom-right:after {
+border-left-color: #fff;
+transform: rotate(90deg);
+bottom: -16px;
+}
+
+.jsavsettings-dialog.arrow-bottom-left:after {
+left: 0;
+}
+
+.jsavsettings-dialog.arrow-bottom-right:after {
+right: 0;
+}
+
+.jsavsettings-dialog h2 {
+border-radius: 10px 10px 0 0;
+}
+
+.jsavsettings-dialog.arrow-top-left h2 {
+border-radius: 0 10px 0 0;
+}
+
+.jsavsettings-dialog.arrow-top-right h2 {
+border-radius: 10px 0 0 0;
+}
+
+.jsavmodal {
+z-index: 999;
+background-color: rgb(120, 120, 120);
+background-color: rgba(0, 0, 0, 0.2);
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+}
+
+.jsavdialog h2 {
+background-color: #eee;
+color: black;
+font-family: Helvetica, Arial;
+font-size: 1.5em;
+font-weight: bold;
+margin: 0;
+padding: 7px 15px;
+cursor: -moz-grab;
+cursor: -webkit-grab;
+cursor: grab;
+}
+
+.jsavdialog.ui-draggable-dragging,
+.jsavdialog.ui-draggable-dragging h2 {
+cursor: -moz-grabbing;
+cursor: -webkit-grabbing;
+cursor: grabbing;
+}
+
+a.jsavdialogclose {
+border: 1px solid #777;
+-ms-border-radius: 20px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+-o-border-radius: 20px;
+border-radius: 20px;
+color: #777;
+float: right;
+font-family: monospace;
+font-size: 30px;
+font-weight: normal;
+height: 20px;
+padding: 3px;
+text-align: center;
+text-decoration: none;
+width: 20px;
+line-height: 22px;
+}
+
+a.jsavdialogclose:hover {
+background-color: #ccc;
+}
+
+.jsavsettings {
+padding: 15px;
+font-family: Helvetica, Arial
+}
