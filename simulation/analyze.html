@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/compute.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"> </script>
+    <style>
+td,th{
+    font-size:16px;
+}
+
+    </style>
+</head> 
+
+<body>
+    <div class="container" id="box">
+        <!-- Instructions -->
+        <div id="myModal" class="modal" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Instructions</h2>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                        <ol type="1" style="font-size: 20px;text-align: justify;">
+                            <li>Click on the <b>CREATE</b> tab to start building a dataset for the algorithm.</li>
+                            <li>In the <b>ATTRIBUTES</b> section, select values for each attribute using the dropdown menu. Click <b>ADD</b> to incorporate these values into the table.</li>
+                            <li>Repeat step 2 until you have completed this process for <b>four</b> rows.</li>
+                            <li>Click <b>NEXT</b> to proceed to the <b>COMPUTE</b> page and initiate the candidate elimination algorithm.</li>
+                            <li>Click <b>ITERATE</b> to identify positive and negative examples within the dataset.</li>
+                            <li>Subsequently, click <b>GENERIC</b> for each attribute to uncover a more generalized hypothesis.</li>
+                            <li>Review the version space to identify boundaries.</li>
+                            <li>Next, click <b>SPECIFIC</b> for each attribute to uncover a more specific hypothesis.</li>
+                            <li>Review the version space again to identify boundaries.</li>
+                            <li>Repeat steps 5 and 9 for every instance (example) in the dataset.</li>
+                            <li>Now, click on the <b>FINAL HYPOTHESIS</b> tab.</li>
+                            <li>Click on the <b>SPACE</b> button to retrieve the specific and generic hypothesis.</li>
+                            <li>Now, click on the <b>COMPARE</b> button to get the consistent hypothesis.</li>
+                            <li>Repeat the above step (13) to compare each generic value with a specific hypothesis.</li>
+                        </ol>
+                                               
+                        </p>
+                        <b style="color:#004E86">NOTE 1:</b> Read the alerts properly.<br>
+                        <b style="color:#004E86">NOTE 2:</b> Explore simulations with various combinations of datasets for a better understanding.
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- header -->
+        <header class="header">
+            <div class="tabs">
+                <!-- tabs -->
+                <div id="tab-1"
+                    style="display: flex; border-right: 2px solid #F5F5F5; cursor:not-allowed;">
+                    <div class="tab-create" style="cursor:not-allowed;">
+                        <a class="tab-text" style="cursor:not-allowed;"> CREATE</a>
+                    </div>
+                    <img src="images/create.png" style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" alt="">
+
+                </div>
+                <div id="tab-2" style="display: flex; border-right: 2px solid #F5F5F5; cursor:not-allowed;">
+                    <div class="tab-create tab-text" style="cursor:not-allowed;">
+
+                        COMPUTE
+                    </div>
+                    <img src="images/calculator.png"
+                        style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" id="calImg" alt="">
+                </div>
+                <div id="tab-3"
+                    style="display: flex; border-right: 2px solid #F5F5F5;color: #004E86;background-color:#ffd964;font-weight: bold; cursor:not-allowed;">
+                    <div class="tab-create" style="cursor:not-allowed;">
+                        FINAL HYPOTHESIS
+                    </div>
+                    <img src="images/hypo1.png" style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" alt="">
+
+                </div>
+            </div>
+            <a class="header-text" id="myBtn" style="padding-top: 8px" href="#">INSTRUCTIONS</a>
+        </header>
+
+        <div class="sec-con-container" STYLE="height:90%">
+            <div class="sec-con-column" STYLE="width:100%">
+                <!-- controls -->
+                <div class="training-left-side-container">
+
+            <!-- table -->
+            <div class="sub-div-control" id="training-control" >
+                <header id="trainToTest" class="header-box">DATASET</header>
+                <div id="tablesContainer" >
+                    
+                    <table id="dataPointsTable" >
+                        <thead >
+                            <tr >
+                                <th>S.No</th>
+                                    <th>SKY</th>
+                                    <th>TEMPERATURE</th>
+                                    <th>HUMID</th>
+                                    <th>WIND</th>
+                                    <th>WATER</th>
+                                    <th>FOREST</th>
+                                    <th>ENJOY SPORT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="for11">
+                            <!-- Data point coordinates will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+<br>
+<div>
+    <div class="sub-div-table" style="width:85%;margin-top:0px">
+        <header id=calculation class="header-box">VERSION SPACE</header>
+
+<div id='specific' style="margin-left: 145px;
+margin-top: 20px;">
+    <span id="heading2" class="heading-label" style="font-size:22px;"><b>S : </b></span>
+    <ol class="jsavautoresize jsavcenter jsavindexed jsavarray jsavhorizontalarray" data-visible="true" data-autoresize="true" data-center="true" data-layout="array" data-indexed="true" data-template="<span class=&quot;jsavvalue&quot;><span class=&quot;jsavvaluelabel&quot;>{{value}}</span></span><span class=&quot;jsavindexlabel&quot;>{{index}}</span>" style="height: 70px; width: 350px;margin-left:70px">
+                             
+        <li class="node jsavindex" id="xnode1">
+            <span class="jsavvalue"><span class="jsavvaluelabel" id="n1"></span></span><span class="jsavindexlabel">0</span>
+
+        </li>
+        <li class="node jsavindex" id="xnode2">
+
+            <span class="jsavvalue"><span class="jsavvaluelabel" id="n2"></span></span><span class="jsavindexlabel">1</span>
+
+        </li>
+
+        <li class="node jsavindex" id="xnode3">
+
+            <span class="jsavvalue"><span class="jsavvaluelabel" id="n3"></span></span><span class="jsavindexlabel">2</span>
+
+        </li>
+
+        <li class="node jsavindex" id="xnode4">
+
+            <span class="jsavvalue"><span class="jsavvaluelabel" id="n4"></span></span><span class="jsavindexlabel">3</span>
+
+        </li>
+        <li class="node jsavindex" id="xnode5">
+
+            <span class="jsavvalue"><span class="jsavvaluelabel" id="n5"></span></span><span class="jsavindexlabel">4</span>
+
+        </li>
+        <li class="node jsavindex" id="xnode6">
+
+            <span class="jsavvalue"><span class="jsavvaluelabel" id="n6"></span></span><span class="jsavindexlabel">5</span>
+
+        </li>
+       </ol>
+</div>
+
+
+           <br>
+
+           <div id="generic" style="margin-left: 145px;
+           margin-top: 100px;">
+            <span id="heading" class="heading-label" style="font-size:22px;"><b>G : </b></span>
+            <ol class="jsavautoresize jsavcenter jsavindexed jsavarray jsavhorizontalarray" data-visible="true" data-autoresize="true" data-center="true" data-layout="array" data-indexed="true" data-template="<span class=&quot;jsavvalue&quot;><span class=&quot;jsavvaluelabel&quot;>{{value}}</span></span><span class=&quot;jsavindexlabel&quot;>{{index}}</span>" style="height: 70px; width: 350px;margin-left:70px">
+                             
+             <li class="node jsavindex" id="hnode1">
+                 <span class="jsavvalue"><span class="jsavvaluelabel" id="hh1"></span></span><span class="jsavindexlabel">0</span>
+ 
+             </li>
+             <li class="node jsavindex" id="hnode2">
+ 
+                 <span class="jsavvalue"><span class="jsavvaluelabel" id="hh2"></span></span><span class="jsavindexlabel">1</span>
+ 
+             </li>
+ 
+             <li class="node jsavindex" id="hnode3">
+ 
+                 <span class="jsavvalue"><span class="jsavvaluelabel" id="hh3"></span></span><span class="jsavindexlabel">2</span>
+ 
+             </li>
+ 
+             <li class="node jsavindex" id="hnode4">
+ 
+                 <span class="jsavvalue"><span class="jsavvaluelabel" id="hh4"></span></span><span class="jsavindexlabel">3</span>
+ 
+             </li>
+             <li class="node jsavindex" id="hnode5">
+ 
+                 <span class="jsavvalue"><span class="jsavvaluelabel" id="hh5"></span></span><span class="jsavindexlabel">4</span>
+ 
+             </li>
+             <li class="node jsavindex" id="hnode6">
+ 
+                 <span class="jsavvalue"><span class="jsavvaluelabel" id="hh6"></span></span><span class="jsavindexlabel">5</span>
+ 
+             </li>
+            </ol>
+           </div>
+
+           <div  id="obser" style="display: none;position: relative;
+           margin-top: -185px;">
+                        
+            <b id="labelSpecific" class="labels" style="margin-top:10px;font-size:22px;    text-align: center;
+            width: 98%;"></b>
+            
+              
+        </div>          
+        
+        <div  id="finalobser" style="display: none;">
+                        
+            <b id="labelSpecifics" class="labels" style="margin-top:10px;font-size:22px;    text-align: center;
+            width: 80%;"><span style="color:#004E86">S: </span></b>
+            
+            <b id="labelGeneric" class="labels" style="margin-top:235px;font-size:22px;    text-align: center;
+            width: 80%;"><span style="color:#004E86">G: </span></b>
+          
+        </div>
+
+    </diV>
+    </div>
+
+    <div class="sub-div-button2" id="buttons-1">
+        <button class="button" id="space" onclick="space()" style="text-align: center;">SPACE</button>
+        <button class="button" id="compare" disabled onclick="compare()" style="text-align: center;">COMPARE</button>
+        <button class="button" id="print" onclick="window.print()" disabled style="text-align: center;">PRINT</button>
+    </div>
+</div>
+           
+
+        </div>
+</div>
+        <!-- footer -->
+        <footer class="footer">
+            <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
+        </footer>
+        
+        <script>
+             // Retrieve the serialized table data from localStorage
+        var serializedData = localStorage.getItem('objectToPass'); 
+        var tableData = JSON.parse(serializedData);
+        var table = document.getElementById('dataPointsTable');
+
+    // Retrieve the serialized  data from localStorage
+        var serializedData2 = localStorage.getItem('objectToPass2'); 
+        var hypoData = JSON.parse(serializedData2);
+
+   // Reconstruct the table by iterating through the tableData array
+  for (var i = 0; i < tableData.length; i++) {
+  var rowData = tableData[i];
+  var row = table.insertRow();
+  row.classList.add("toCheck")
+  console.log(rowData);
+
+
+  // Iterate through each property of the row data object
+
+  row[0]=i
+
+  for (var columnName in rowData) {
+    var cell = row.insertCell();
+    cell.textContent = rowData[columnName];
+  }
+}
+var rl = document.getElementsByClassName('toCheck');
+
+// Retrieve the array from localStorage
+var specific = JSON.parse(localStorage.getItem('specific'));
+
+var array1 = JSON.parse(localStorage.getItem('array1'));
+var array2 = JSON.parse(localStorage.getItem('array2'));
+var array3 = JSON.parse(localStorage.getItem('array3'));
+var array4 = JSON.parse(localStorage.getItem('array4'));
+var array5 = JSON.parse(localStorage.getItem('array5'));
+var array6 = JSON.parse(localStorage.getItem('array6'));
+
+var generic=[];var s=0;
+             
+function space()
+{
+alert1('info','','Now, compare these two (specific & generic) hypotheses to find mismatches. <br>To start comparing, click on the <b style="color:#004E86">COMPARE</b> button.')
+
+
+      for(i=0;i<6;i++)
+       {
+        id='n'+(i+1);
+        document.getElementById(id).innerHTML=specific[i];
+       }
+
+            
+             loop()
+
+             document.getElementById('compare').disabled=false;
+             document.getElementById('space').disabled=true;
+}
+
+var nonZero=0;var x=0;
+function loop()
+{
+
+    while(x<6)
+             {
+                 const arrays = [array1, array2, array3, array4, array5, array6];
+                if(arrays[x]!=0)
+                 {
+                    nonZero++
+                }
+             x++;
+
+             }
+
+    while(s<6)
+             {
+                 const arrays = [array1, array2, array3, array4, array5, array6];
+            //     const lengths = arrays.map(array => array.length);
+
+                if(arrays[s]!=0)
+                 {
+                    for(i=0;i<6;i++)
+                     {
+                        id='hh'+(i+1);
+                        document.getElementById(id).innerHTML=arrays[s][i];
+                        generic[i]=arrays[s][i];
+                     }
+                     s++;
+                     break;
+                }
+             else{
+                s++;
+             }
+             }
+}
+
+var flagUnique=false
+function removeDuplicateArrays(matrix) {
+    flagUnique=false;
+    const uniqueArrays = [];
+    const stringifiedArrays = new Set(); // To keep track of unique arrays as strings
+
+    for (const array of matrix) {
+        const stringifiedArray = JSON.stringify(array); // Convert array to string
+        if (!stringifiedArrays.has(stringifiedArray)) { // Check if stringified array is unique
+            
+            uniqueArrays.push(array);
+            stringifiedArrays.add(stringifiedArray);
+        }
+        else{
+            flagUnique=true;
+            console.log('not unique')
+        }
+    }
+
+    return uniqueArrays;
+}
+
+
+let c=0;let counts=0;const matrix=[];var m=0;
+function compare()
+{
+
+      document.getElementById('obser').style.display="block"
+      var specificLabel=document.getElementById('labelSpecific');
+     specificLabel.style.display="block";
+   
+    if(c>0)
+    {
+        removeColorAll()
+    }
+            id1='hnode'+(c+1)
+            id2='xnode'+(c+1)
+         
+            let v1 = document.getElementById(id1);
+            v1.classList.add("jsavarrow");
+            let v2 = document.getElementById(id2);
+            v2.classList.add("jsavarrow");
+
+            if(specific[c]==generic[c])
+            {
+                
+            document.getElementById(id1).style.backgroundColor='lightgreen';
+            document.getElementById(id2).style.backgroundColor='lightgreen';
+               alert1('success','Matched!!','To compare the next value, click the <b style="color:#004E86">COMPARE</b> button again.')
+            }
+            else{
+                alert1('error','Not Matched!!','The <b style="color:#004E86">?</b> will be replaced with a specific value, and this new hypothesis will be added to the version space.<br> To compare the next value, click the <b style="color:#004E86">COMPARE</b> button again.');
+                matrix[m] = [];
+              
+                for(i=0;i<6;i++)
+       {
+                 if(i==0){
+                    if(i<c)
+                    {
+                        specificLabel.innerHTML+='{ '+generic[i]+', '; 
+                        matrix[m][i] = generic[i];
+                    }
+
+                    else
+                    {
+                        specificLabel.innerHTML+='{ '+specific[i]+', '; 
+                        matrix[m][i] = specific[i];
+                    }
+                     
+                    }
+
+                else if(i<=c){
+
+                    if(i<5 && i<c)
+                    {
+                    specificLabel.innerHTML+=generic[i]+', '; 
+                    matrix[m][i] = generic[i];
+                    }
+                    else if(i==c)
+                    {
+                        if(i==5)
+                        {
+                            specificLabel.innerHTML+=specific[i]+' }'; 
+                            matrix[m][i] = specific[i]; 
+                        }
+                        else{
+                            specificLabel.innerHTML+=specific[i]+', ';
+                            matrix[m][i] = specific[i];
+                        }
+                        
+                    }
+                    
+                else{
+                    specificLabel.innerHTML+=specific[i]+' }';
+                    matrix[m][i] = specific[i];
+                } 
+             }
+
+              else if(i>c && i!=5)
+                    {
+                        specificLabel.innerHTML+=generic[i]+', ';
+                        matrix[m][i] = generic[i];
+                    }
+                
+            else{
+                if(i<5)
+                {
+                    specificLabel.innerHTML+='?'+', '; 
+                    matrix[m][i] = '?';
+                }
+               else 
+                  {
+                    specificLabel.innerHTML+='?'+' }'; 
+                    matrix[m][i] = '?';
+                  }
+              }
+       
+       }
+       m++;
+            document.getElementById(id1).style.backgroundColor='red';
+            document.getElementById(id2).style.backgroundColor='red';
+            }
+
+            c++;
+            if(c==6)
+            {
+                counts++;
+                
+                removeColorAll();
+                if(counts==nonZero)
+                {
+                   
+                    finalSpace()
+                    const uniqueArrays = removeDuplicateArrays(matrix);
+                    console.log(uniqueArrays);
+
+                    var total=uniqueArrays.length+1+s;
+                if(flagUnique==true)
+                {
+                    Swal.fire({
+        title: "The newly added hypothesis contains a duplicate hypothesis!",
+        html:'Click on <b>OK</b> to remove duplicate hypothesis.',
+        icon: "warning",
+        confirmButtonText: "OK",
+        target: '.sub-div-control',
+        customClass: {
+            container: "swal-container",
+            popup: "swal-popup",
+            title: "swal-title",
+            content: "swal-content",
+        },
+       
+        didOpen: () => {
+            const container = document.querySelector(".swal-container");
+            const popup = document.querySelector(".swal-popup");
+            const containerWidth = myContainer.offsetWidth;
+            const containerHeight = myContainer.offsetHeight;
+
+            // Change font size based on container size
+            if (containerWidth >= 1000 && containerHeight >= 672) {
+                container.style.fontSize = "24px";
+            } else {
+                container.style.fontSize = "16px";
+            }
+
+            // Adjust dimensions and position of the Swal container
+            container.style.position = "absolute";
+            container.style.width = "100%";
+            container.style.height = "100%";
+            popup.style.marginTop = "60px";
+            popup.style.marginLeft = "165px";
+            container.style.top = "0";
+            container.style.left = "0";
+            container.style.padding = "0";
+
+
+        },
+        showCloseButton: false, // Disable the close button
+        allowOutsideClick: false, // Prevent closing by clicking outside the modal
+        allowEscapeKey: false, // Prevent closing by pressing the escape key
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var content=document.getElementById('labelSpecific')
+                    content.innerHTML='';
+                    for(i=0;i<uniqueArrays.length;i++)
+                    {
+                        for(j=0;j<=5;j++)
+                        {
+                            if(j==0)
+                            {
+                                content.innerHTML+='{ '+uniqueArrays[i][j]+', '; 
+                            }
+                            else if(j==5)
+                            {
+                                content.innerHTML+=uniqueArrays[i][j]+' }';
+                            }
+                            else{
+                                content.innerHTML+=uniqueArrays[i][j]+', ';
+                            }
+                            
+                        }
+                    }
+            alert1('info','All consistent hypothesis found!!', `Total no. of consistent hypothesis present for the particular dataset is <b>${total}</b>.<br> Now, click on <b style="color:#004E86">PRINT</b> button.`)
+        } else {
+           
+          
+        }
+    });
+                   
+                }
+                else{
+                    alert1('info','All consistent hypothesis found!!',`Total no. of consistent hypothesis present for the particular dataset is <b>${total}</b>.<br> Now, click on <b style="color:#004E86">PRINT</b> button.`);
+                }
+                   
+                document.getElementById('compare').disabled=true;
+                document.getElementById('print').disabled=false;
+                }
+              else{
+                alert1('info','Check the consistency with the next generic hypothesis!','Again, click on <b style="color:#004E86">COMPARE</b> button.')
+                c=0;
+                loop();
+              }
+            }
+}
+
+function finalSpace()
+{
+    document.getElementById('specific').style.display="none";
+    document.getElementById('generic').style.display="none";
+
+   document.getElementById('finalobser').style.display="block";
+
+   var o=document.getElementById('obser')
+   o.style.position='absolute';
+   o.style.marginTop='100px';
+   o.style.width='815px'
+   
+   var specificLabel=document.getElementById('labelSpecifics');
+   specificLabel.style.display="block";
+
+   for(var i=0;i<6;i++)
+       {    
+       if(i==5){specificLabel.innerHTML+=specific[i]+' }';  }
+        else if(i==0){specificLabel.innerHTML+='{ '+specific[i]+', '; }
+        else{specificLabel.innerHTML+=specific[i]+', '; }
+       }
+
+      var GENERICLabel=document.getElementById('labelGeneric');
+       GENERICLabel.style.display="block";
+
+       var s=0;
+             
+             while(s<6)
+             {
+                 const arrays = [array1, array2, array3, array4, array5, array6];
+               //  const lengths = arrays.map(array => array.length);
+
+                if(arrays[s]!=0)
+                 {
+                    for(i=0;i<6;i++)
+                     {
+                          if(i==0)
+                          {
+                           GENERICLabel.innerHTML+='{ '+arrays[s][i]+', '; //row data 
+                         }
+                         else if(i==5)
+                         {
+                          GENERICLabel.innerHTML+=arrays[s][i]+' }'; //row data 
+                         }
+                         else
+                         {
+                          GENERICLabel.innerHTML+=arrays[s][i]+', '; //row data 
+                         }
+                     }
+                }
+             s++;
+             }
+
+}
+
+
+function removeColorAll()
+{
+    for(i=1;i<7;i++)
+    {
+        id1='hnode'+i;
+        id2='xnode'+i;
+        document.getElementById(id1).style.backgroundColor='white';
+    document.getElementById(id2).style.backgroundColor='white';
+    document.getElementById(id1).classList.remove("jsavarrow");
+    document.getElementById(id2).classList.remove("jsavarrow");
+    }
+}
+
+function alert1(icon,title,text)
+{
+    Swal.fire({
+         icon: icon,
+         title: title,
+         html: text,
+         allowOutsideClick: false,
+         target: '#box',
+         customClass: {                      // <------ customClass is an object!
+           container: 'position-absolute',
+           popup:"swal2-popup"
+         },     
+       });
+}
+
+
+alert1('info','','Click on the <b style="color:#004E86">SPACE</b> button to retrieve the specific & generic hypothesis.')
+
+
+        </script>
+        <script src="js/script.js"></script>
+
+
+        <script>const pageAccessedByReload = (
+            (window.performance.navigation && window.performance.navigation.type === 1) ||
+              window.performance
+                .getEntriesByType('navigation')
+                .map((nav) => nav.type)
+                .includes('reload')
+          );
+          if(pageAccessedByReload==true){
+              window.location.href="analyze.html"
+          }
+
+          // Attach an event listener to the 'beforeunload' event
+window.addEventListener('beforeunload', function() {
+    // Clear the local storage
+ //   localStorage.removeItem('specific');
+});
+
+          </script>
+
+
+    </div>
+
+</body>
+
+</html>

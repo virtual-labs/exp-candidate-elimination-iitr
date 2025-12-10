@@ -1,0 +1,74 @@
+
+/home/runner/work/exp-candidate-elimination-iitr/exp-candidate-elimination-iitr/experiment/simulation/js/script.js
+    2:7    warning  'myContainer' is assigned a value but never used  no-unused-vars
+   33:5    warning  'flag_pre' is assigned a value but never used     no-unused-vars
+   35:10   warning  'table_alert' is defined but never used           no-unused-vars
+   37:5    warning  'Swal' is not defined                             no-undef
+   86:13   warning  'Swal' is not defined                             no-undef
+  100:17   warning  'f' is not defined                                no-undef
+  101:17   warning  'f' is not defined                                no-undef
+  102:17   warning  'f' is not defined                                no-undef
+  104:17   warning  'ne' is not defined                               no-undef
+  105:17   warning  'ne' is not defined                               no-undef
+  106:17   warning  'ne' is not defined                               no-undef
+  109:9    warning  'i' is not defined                                no-undef
+  109:13   warning  'i' is not defined                                no-undef
+  109:27   warning  'i' is not defined                                no-undef
+  111:12   warning  'i' is not defined                                no-undef
+  112:12   warning  'i' is not defined                                no-undef
+  132:3    warning  'Swal' is not defined                             no-undef
+  149:10   warning  'addDataToTable' is defined but never used        no-unused-vars
+  165:5    warning  'rl' is not defined                               no-undef
+  166:17   warning  'rl' is not defined                               no-undef
+  167:17   warning  'rl' is not defined                               no-undef
+  169:5    warning  'des' is not defined                              no-undef
+  170:25   warning  'rl' is not defined                               no-undef
+  171:9    warning  'rl' is not defined                               no-undef
+  171:48   warning  'rl' is not defined                               no-undef
+  171:95   warning  'rl' is not defined                               no-undef
+  171:136  warning  'rl' is not defined                               no-undef
+  171:176  warning  'rl' is not defined                               no-undef
+  171:217  warning  'rl' is not defined                               no-undef
+  176:9    warning  'des' is not defined                              no-undef
+  183:9    warning  'des' is not defined                              no-undef
+  184:7    warning  'd' is not defined                                no-undef
+  185:10   warning  'd' is not defined                                no-undef
+  187:9    warning  'd' is not defined                                no-undef
+  282:7    warning  'g' is not defined                                no-undef
+  287:5    warning  'Swal' is not defined                             no-undef
+  289:14   warning  'g' is not defined                                no-undef
+  304:9    warning  'i' is not defined                                no-undef
+  304:13   warning  'i' is not defined                                no-undef
+  304:27   warning  'i' is not defined                                no-undef
+  306:12   warning  'i' is not defined                                no-undef
+  307:12   warning  'i' is not defined                                no-undef
+  309:3    warning  'data' is not defined                             no-undef
+  310:3    warning  'f' is not defined                                no-undef
+  311:3    warning  'f' is not defined                                no-undef
+  312:3    warning  'f' is not defined                                no-undef
+  314:13   warning  'j' is already defined                            no-redeclare
+  316:16   warning  'data' is not defined                             no-undef
+  337:5    warning  'Swal' is not defined                             no-undef
+  359:13   warning  'f' is not defined                                no-undef
+  360:13   warning  'f' is not defined                                no-undef
+  361:13   warning  'f' is not defined                                no-undef
+  374:11   warning  'Swal' is not defined                             no-undef
+  396:10   warning  'deleteRow' is defined but never used             no-unused-vars
+  406:3    warning  'f' is not defined                                no-undef
+  407:5    warning  'f' is not defined                                no-undef
+  408:5    warning  'f' is not defined                                no-undef
+  413:9    warning  'i' is not defined                                no-undef
+  413:13   warning  'i' is not defined                                no-undef
+  413:27   warning  'i' is not defined                                no-undef
+  415:12   warning  'i' is not defined                                no-undef
+  416:12   warning  'i' is not defined                                no-undef
+  472:14   warning  'i' is already defined                            no-redeclare
+  473:11   warning  'rowData' is already defined                      no-redeclare
+  474:11   warning  'cells' is already defined                        no-redeclare
+  477:16   warning  'j' is already defined                            no-redeclare
+  479:13   warning  'cellValue' is already defined                    no-redeclare
+  498:3    warning  'rl' is not defined                               no-undef
+  499:6    warning  'rl' is not defined                               no-undef
+
+✖ 69 problems (0 errors, 69 warnings)
+
