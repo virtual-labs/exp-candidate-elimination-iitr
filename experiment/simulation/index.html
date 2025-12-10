@@ -1,13 +1,165 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container" id="box">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Instructions</h2>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                    <ol type="1" style="font-size: 20px;text-align: justify;">
+                        <li>Click on the <b>CREATE</b> tab to start building a dataset for the algorithm.</li>
+                            <li>In the <b>ATTRIBUTES</b> section, select values for each attribute using the dropdown menu. Click <b>ADD</b> to incorporate these values into the table.</li>
+                            <li>Repeat step 2 until you have completed this process for <b>four</b> rows.</li>
+                            <li>Click <b>NEXT</b> to proceed to the <b>COMPUTE</b> page and initiate the candidate elimination algorithm.</li>
+                            <li>Click <b>ITERATE</b> to identify positive and negative examples within the dataset.</li>
+                            <li>Subsequently, click <b>GENERIC</b> for each attribute to uncover a more generalized hypothesis.</li>
+                            <li>Review the version space to identify boundaries.</li>
+                            <li>Next, click <b>SPECIFIC</b> for each attribute to uncover a more specific hypothesis.</li>
+                            <li>Review the version space again to identify boundaries.</li>
+                            <li>Repeat steps 5 and 9 for every instance (example) in the dataset.</li>
+                            <li>Now, click on the <b>FINAL HYPOTHESIS</b> tab.</li>
+                            <li>Click on the <b>SPACE</b> button to retrieve the final hypothesis.</li>
+                    </ol>
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- header -->
+        <header class="header">
+            <div class="tabs">
+
+                <!-- tabs -->
+                <div id="tab-1" style="display: flex; border-right: 2px solid #F5F5F5; " onclick="window.location='exp1.html'">
+                    <div class="tab-create">
+                        <a class="tab-text" id="todecide">CREATE</a>
+                    </div>
+                    
+                        <img src="images/create.png" style="margin-top: 3px; margin-right: 10px; height: 85%" alt="">
+                   
+                </div>
+
+                <div id="tab-2" style="display: flex; border-right: 2px solid #F5F5F5; cursor:not-allowed;">
+                    <div class="tab-text tab-create" style="cursor:not-allowed;">
+                        COMPUTE
+                    </div>
+                    <img src="images/calculator.png" style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" alt="">
+                </div>
+                <div id="tab-3"
+                    style="display: flex; border-right: 2px solid #F5F5F5; cursor:not-allowed;">
+                    <div class="tab-text tab-create" style="cursor:not-allowed;">
+                        FINAL HYPOTHESIS
+                    </div>
+                    <img src="images/hypo.png" style="margin-top: 3px; margin-right: 10px; height: 85%" alt="">
+
+                </div>
+            </div>
+            <a class="header-text" id="myBtn" style="padding-top: 8px" href="#">INSTRUCTIONS</a>
+        </header>
+        <body>
+            <div style="width:80%;margin-top: 2.3in; margin-left: 1in;">
+                <center>
+                    <p style="color:#333;font-size: 24px;text-align: justify;">
+                        To understand how the <span style="color:#004E86;">C</span>andidate <span style="color:#004E86;">E</span>limination <span style="color:#004E86;">A</span>lgorithm (CEA) works
+                        in the context of attributes such as sky, temperature, humidity, wind,
+                         water, forest, and enjoyment of sports, click on the <b style="color:#004E86;">CREATE</b> tab.
+                     </p>
+                     
+                </center>
+                
+            </div>
+
+        </body>
+
+
+
+
+        <!-- footer -->
+        <footer class="footer">
+            <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+    <script>
+        
+        function Submit(){
+        const myContainer = document.getElementById('box');
+        Swal.fire({
+            icon: 'info',
+            title: "Click on the CREATE tab.",
+            allowOutsideClick: false,
+            customClass: {
+                container: "swal-container",
+                popup: "swal-popup",
+                title: "swal-title",
+                content: "swal-content",
+            },
+            target: myContainer,
+            didOpen: () => {
+                const container = document.querySelector('.swal-container');
+                const containerWidth = myContainer.offsetWidth;
+                const containerHeight = myContainer.offsetHeight;
+
+               
+
+              
+                container.style.position = 'absolute';
+                container.style.width = '100%';
+                container.style.height = '100%';
+                container.style.top = '0';
+                container.style.left = '0';
+                container.style.padding = '0';
+                d=document.getElementById("nvalue").value
+                if(d=='1'){
+                    g=document.getElementById("todecide")
+                    g.href="exp1.html"
+                    document.body.getElementsByClassName("tab-create")[0].style.cursor = "pointer";
+                }
+                if(d=='NULL'){
+                    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: "Before proceeding, kindly select an example.",
+      showCancelBotton:true,
+      allowOutsideClick: false,
+      target: '.container',
+      customClass: {                      // <------ customClass is an object!
+        container: 'position-absolute'
+      },     
+    });
+                }
+                if(d=='2'){
+                    g=document.getElementById("todecide")
+                    g.href="example1.html"
+                    document.body.getElementsByClassName("tab-create")[0].style.cursor = "pointer";
+                }
+
+            },
+        });}</script>
+
 </body>
+
 </html>
