@@ -30,7 +30,7 @@
     "correctAnswer": "d"
   },
   {
-    "question": "In the Candidate Elimination algorithm, what is the first step in processing a new training example?",
+    "question": "In the Candidate Elimination algorithm, what is the first step in processing a first training example?",
     "answers": {
       "a": "Update the general hypothesis (G)",
       "b": "Update the specific hypothesis (S)",
