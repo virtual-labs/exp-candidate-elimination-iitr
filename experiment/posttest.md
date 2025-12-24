@@ -22,7 +22,7 @@ c. It is a deterministic algorithm. <br>
 d. It is an incremental learning algorithm. <br>
 <br>
 
-Q4. In the Candidate Elimination algorithm, what is the first step in processing a new training example?<br>
+Q4. In the Candidate Elimination algorithm, what is the first step in processing a first training example?<br>
 a. Update the general hypothesis (G) <br>
 b. Update the specific hypothesis (S) <br>
 c. Compare the example with G <br>
