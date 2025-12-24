@@ -1,0 +1,52 @@
+[
+  {
+    "question": "The Candidate Elimination algorithm is most suitable for learning concepts that can be represented by:",
+    "answers": {
+      "a": "Neural networks",
+      "b": "Decision trees",
+      "c": "Attribute-value pairs",
+      "d": "Text data"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "In the Candidate Elimination algorithm, how is the general hypothesis (G) updated when a negative example is encountered?",
+    "answers": {
+      "a": "By making it more general",
+      "b": "By making it more specific",
+      "c": "By discarding it",
+      "d": "By not making any changes"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "Which of the following statements is true about the Candidate Elimination algorithm?",
+    "answers": {
+      "a": "It is primarily used for unsupervised learning tasks.",
+      "b": "It is an offline learning algorithm.",
+      "c": "It is a deterministic algorithm.",
+      "d": "It is an incremental learning algorithm."
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "In the Candidate Elimination algorithm, what is the first step in processing a first training example?",
+    "answers": {
+      "a": "Update the general hypothesis (G)",
+      "b": "Update the specific hypothesis (S)",
+      "c": "Compare the example with G",
+      "d": "Initialize S and G"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "What is the output of the Candidate Elimination algorithm?",
+    "answers": {
+      "a": "The most specific hypothesis (S)",
+      "b": "The most general hypothesis (G)",
+      "c": "A set of hypotheses between S and G",
+      "d": "The training data"
+    },
+    "correctAnswer": "c"
+  }
+]
